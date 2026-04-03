@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="AI Chat Application with Google Knowledge Graph powered by OpenAI">
+    <title>AI Chat - Powered by OpenAI & Google</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <!-- Chat Container -->
+        <div class="chat-container">
+            <!-- Header -->
+            <div class="chat-header">
+                <div class="header-content">
+                    <h1>🤖 AI Assistant</h1>
+                    <p class="subtitle">Powered by OpenAI & Google Knowledge Graph</p>
+                </div>
+                <div class="header-buttons">
+                    <button class="suggestions-toggle" id="suggestionsToggle" title="Toggle suggestions panel">
+                        💡
+                    </button>
+                    <button class="clear-btn" title="Clear chat history">🗑️</button>
+                </div>
+            </div>
+
+            <!-- Chat Messages Area -->
+            <div class="chat-messages" id="chatMessages">
+                <div class="message-item bot-message">
+                    <div class="message-content">
+                        <p>Hello! I'm your AI Assistant. Ask me anything and I'll provide suggestions for relevant websites, articles, and resources!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Typing Indicator -->
+            <div class="typing-indicator hidden" id="typingIndicator">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <!-- Input Area -->
+            <div class="chat-input-container">
+                <div class="input-wrapper">
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        class="chat-input" 
+                        placeholder="Type your message..."
+                        autocomplete="off"
+                    >
+                    <button class="send-btn" id="sendBtn" title="Send message">
+                        ➤
+                    </button>
+                </div>
+                <div class="char-count" id="charCount">0/500</div>
+            </div>
+
+            <!-- Theme Toggle -->
+            <button class="theme-toggle" id="themeToggle" title="Toggle dark mode">
+                🌙
+            </button>
+
+            <!-- Status Indicator -->
+            <div class="status-indicator" id="statusIndicator">
+                <span class="status-dot"></span>
+                <span class="status-text">Connected</span>
+            </div>
+        </div>
+
+        <!-- Suggestions Sidebar -->
+        <div class="suggestions-panel" id="suggestionsPanel">
+            <div class="suggestions-header">
+                <h2>💡 Suggestions</h2>
+                <button class="close-suggestions" id="closeSuggestions">✕</button>
+            </div>
+
+            <div class="suggestions-content" id="suggestionsContent">
+                <p class="suggestions-placeholder">Ask a question to see relevant suggestions here</p>
+            </div>
+
+            <!-- Abuse Report Tab -->
+            <div class="abuse-report-tab" id="abuseReportTab">
+                <div class="abuse-report-header">
+                    <h3>⚠️ Check Abuse Report</h3>
+                </div>
+                <div class="abuse-report-input">
+                    <input 
+                        type="text" 
+                        id="abuseCheckDomain" 
+                        class="domain-input" 
+                        placeholder="Enter domain (e.g., example.com)"
+                    >
+                    <button class="check-abuse-btn" id="checkAbuseBtn">Check</button>
+                </div>
+                <div class="abuse-report-result" id="abuseReportResult"></div>
+            </div>
+
+            <div class="suggestions-loading hidden" id="suggestionsLoading">
+                <div class="loading-spinner"></div>
+                <p>Finding suggestions...</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
